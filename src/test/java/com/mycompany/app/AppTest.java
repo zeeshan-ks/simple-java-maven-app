@@ -1,38 +1,25 @@
 package com.mycompany.app;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+    @Test
+    public void testAppConstructor() {
+        App app1 = new App();
+        App app2 = new App();
+        assertEquals(app1.getMessage(), app2.getMessage());
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    @Test
+    public void testAppMessage()
     {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        App app = new App();
+        assertEquals("Hello World!", app.getMessage());
     }
 }
